@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+
+{% block body %}
+<div class="column is-one-third">
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button class="button is-success is-fullwidth is-medium mt-5" type="submit">Dweet
+
+        </button>
+
+    </form>
+
+    {% if message %}
+    <h1>{{ message }}</h1>
+    {% endif %}
+</div>
+
+{% endblock %}
