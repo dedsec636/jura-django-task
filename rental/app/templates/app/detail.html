@@ -1,21 +1,39 @@
 {% extends 'app/base.html' %}
 
 {% block body %}
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 <div class="container">
-    <div class="row md-5">
-        <div class="col-md-4">
-            <h1>{{item1.product_name}}</h1>
-            <h2>{{item1.product_desc}}</h2>
-            <h3>{{item1.price}}</h3>
-            <h4>Booking status:{{item1.product_booked}}</h4>
-            <hr>
-        </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="project-info-box mt-0">
+                <h2>{{item1.product_name}}</h2>
+                <p class="mb-4">{{item1.product_desc}}</p>
+            </div><!-- / project-info-box -->
+
+            <div class="project-info-box">
+                <p><b>Price per day in Rs:</b>{{item1.price}} </p>
+            
+            </div><!-- / project-info-box -->
+
+        </div><!-- / column -->
+
+        <div class="col-md-7">
+            <img src="https://www.bootdey.com/image/400x300/FFB6C1/000000" alt="project-image" class="rounded">
+            <div class="project-info-box">
+                <a class="btn btn-primary" href={% url 'app:book' item1.id %} class="btn mr-2"><i class="fas fa-link"></i> Make
+                    Booking
+                </a>
+            </div><!-- / project-info-box -->
+        </div><!-- / column -->
     </div>
-
-    <a href="{% url 'app:book' item1.id %}">Make booking</a>
-
-
-
 </div>
+
+
+
+
 
 {% endblock %}

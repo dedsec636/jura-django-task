@@ -1,18 +1,25 @@
 {% extends 'app/base.html' %}
 
 {% block body %}
-<div class="column is-one-third">
 
-    <form method="post">
+{% load django_bootstrap5 %}
+
+<div class="twelve">
+    <h1 style="text-align: center;">Booking Page</h1>
+</div>
+
+<div class="mx-auto col-10 col-md-8 col-lg-6" ">
+
+    <form method="post" style="align-content: center;">
 
         {% csrf_token %}
 
-        {{ form.as_p }}
-
-        <button class="button is-success is-fullwidth is-medium mt-5" type="submit">Dweet
+        {% bootstrap_form form %}
+        <div class="col-md-12 text-center">
+        <button class=" btn btn-primary is-success is-fullwidth is-medium mt-5" type="submit">Book
 
         </button>
-
+        </div>
     </form>
 
     {% if message %}
